@@ -3,7 +3,7 @@ require 'rails_helper'
 
 
 #Only validates:first_name, uniqueness: { scope: [ :last_name, :birthdate ] }
-RSpec.describe StudentSpec, type: => :model do
+RSpec.describe StudentSpec, type: :model do
 
   describe "validations" do
     it "fails to save" do

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe StudentsControllerController, type: => :controller do
-
+#RSpec.describe StudentsControllerController, type: => :controller do
+RSpec.describe StudentsController, type: :controller do
   describe "GET #index" do
     it "is successful" do
       get :index

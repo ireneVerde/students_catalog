@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "CreateStudents", type: => :feature do
+RSpec.feature "CreateStudents", type:  :feature do
 
 feature "Create student" do
   scenario "successfully" do
