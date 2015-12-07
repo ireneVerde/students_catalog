@@ -2,12 +2,12 @@ require 'rails_helper'
 
 
 
-#Only validates:first_name, uniqueness: { scope: [ :last_name, :birthdate ] }
-RSpec.describe StudentSpec, type: :model do
+#Only validates:first_name, uniqueness: { scope: [ :last_name, :birthday ] }
+RSpec.describe Student, type: :model do
 
   describe "validations" do
     it "fails to save" do
-      studenspec = StudentSpec.new
+      studenspec = Student.new
 
       studenspec.save
 
@@ -15,15 +15,15 @@ RSpec.describe StudentSpec, type: :model do
     end
 
     it "validate birthday" do
-      studenspec = StudentSpec.new(first_name: "Maximiliano", last_name: "Hernández")
+      studenspec = Student.new(first_name: "Maximiliano", last_name: "Hernández")
 
       studenspec.save
 
-      expect(studenspec.errors.full_messages).to eq(["Birthday necessary"])
+      expect(studenspec.errors.full_messages).to eq(["birthday necessary"])
     end
 
     it "validate first_name" do
-      studenspec = StudentSpec.new(last_name: "Hernández", birthday: "03/06/1991")
+      studenspec = Student.new(last_name: "Hernández", birthday: "03/06/1991")
 
       studenspec.save
 
@@ -31,7 +31,7 @@ RSpec.describe StudentSpec, type: :model do
     end
 
     it "validate last_name" do
-      studenspec = StudentSpec.new(first_name: "Maximiliano",birthday: "03/06/1991")
+      studenspec = Student.new(first_name: "Maximiliano",birthday: "03/06/1991")
 
       studenspec.save
 
@@ -39,11 +39,11 @@ RSpec.describe StudentSpec, type: :model do
     end
 
     it "Validates uniqueness of first name" do
-      StudentSpec.create(first_name: "Maximiliano",
+      Student.create(first_name: "Maximiliano",
                   last_name: "Hernández",
                   birthday:"03/06/1991")
 
-      studenspec = StudentSpec.new(first_name: "Maximiliano",
+      studenspec = Student.new(first_name: "Maximiliano",
                   last_name: "Hernández",
                   birthday:"03/06/1991")
 
