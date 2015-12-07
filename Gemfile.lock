@@ -188,7 +188,7 @@ GEM
 
 PLATFORMS
   ruby
-  
+
 DEPENDENCIES
   byebug
   capybara
